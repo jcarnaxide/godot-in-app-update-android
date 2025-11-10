@@ -57,8 +57,14 @@ android {
 
 }
 
+val androidDependencies = arrayOf(
+	libs.appUpdateKtx.get(),
+	libs.gmsTasks.get()
+)
+
 dependencies {
 	implementation("godot:godot-lib:${project.extra["godotVersion"]}.${project.extra["releaseType"]}@aar")
+	androidDependencies.forEach { implementation(it) }
 }
 
 tasks {
@@ -101,6 +107,7 @@ tasks {
 			"pluginNodeName" to (project.extra["pluginNodeName"] as String),
 			"pluginVersion" to (project.extra["pluginVersion"] as String),
 			"pluginPackage" to (project.extra["pluginPackageName"] as String),
+			"androidDependencies" to androidDependencies.joinToString(", ") { "\"$it\"" },
 		))
 	}
 

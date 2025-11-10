@@ -6,6 +6,12 @@
 compileSdk = "35"
 minSdk = "24"
 buildTools = "35.0.0"
+appUpdate = "2.1.0"
+gmsTasks = "18.4.0"
+
+[libraries]
+appUpdateKtx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdate" }
+gmsTasks = { module = "com.google.android.gms:play-services-tasks", version.ref = "gmsTasks" }
 
 [plugins]
 android-library = { id = "com.android.library", version = "8.6.1" }

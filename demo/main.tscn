@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg3hylang5fxn"]
 
 [ext_resource type="Script" uid="uid://d25jwt6qd0blf" path="res://main.gd" id="1_j0gfq"]
-[ext_resource type="Script" uid="uid://btirxgk681cdm" path="res://addons/InAppUpdatePlugin/InAppUpdate.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cw4ujjsinl725" path="res://addons/InAppUpdatePlugin/InAppUpdate.gd" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_j0gfq")
@@ -22,6 +22,5 @@ text = "Hello World"
 
 [node name="InAppUpdate" type="Node" parent="."]
 script = ExtResource("2_0xm2m")
-metadata/_custom_type_script = "uid://die2vhfwipspn"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

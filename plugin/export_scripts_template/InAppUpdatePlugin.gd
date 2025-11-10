@@ -4,7 +4,7 @@ extends EditorPlugin
 const PLUGIN_NODE_TYPE_NAME = "@pluginNodeName@"
 const PLUGIN_PARENT_NODE_TYPE = "Node"
 const PLUGIN_NAME: String = "@pluginName@"
-#const ANDROID_DEPENDENCIES: Array = [ @androidDependencies@ ]
+const ANDROID_DEPENDENCIES: Array = [ @androidDependencies@ ]
 
 # A class member to hold the editor export plugin during its lifecycle.
 var android_export_plugin : AndroidExportPlugin
@@ -33,10 +33,10 @@ class AndroidExportPlugin extends EditorExportPlugin:
 		else:
 			return PackedStringArray(["%s/bin/release/%s-release.aar" % [_plugin_name, _plugin_name]])
 
-	#func _get_android_dependencies(platform: EditorExportPlatform, debug: bool) -> PackedStringArray:
-		#var deps: PackedStringArray = PackedStringArray(ANDROID_DEPENDENCIES)
-		#InAppUpdate.log_info("Android dependencies: %s" % str(deps))
-		#return deps
+	func _get_android_dependencies(platform: EditorExportPlatform, debug: bool) -> PackedStringArray:
+		var deps: PackedStringArray = PackedStringArray(ANDROID_DEPENDENCIES)
+		InAppUpdate.log_info("Android dependencies: %s" % str(deps))
+		return deps
 
 	func _get_name():
 		return _plugin_name
