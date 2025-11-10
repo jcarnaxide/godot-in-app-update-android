@@ -1,5 +1,17 @@
+//
+// © 2025-present https://github.com/jcarnaxide
+//
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
 plugins {
-    id("com.android.library") version "7.4.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.8.0" apply false
+	alias(libs.plugins.android.library) apply false
+	alias(libs.plugins.kotlin.android) apply false
+	alias(libs.plugins.undercouch.download) apply false
+}
+
+allprojects {
+	tasks.withType<JavaCompile> {
+		options.compilerArgs.add("-Xlint:unchecked")
+		options.compilerArgs.add("-Xlint:deprecation")
+	}
 }

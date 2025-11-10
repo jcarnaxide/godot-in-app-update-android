@@ -1,3 +1,7 @@
+//
+// © 2025-present https://github.com/jcarnaxide
+//
+
 pluginManagement {
     repositories {
         google()
@@ -10,11 +14,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://plugins.gradle.org/m2/")
-        maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+        flatDir {
+            dirs("${rootDir}/libs")
+        }
     }
 }
 
-// TODO: Update project's name.
-rootProject.name = "GodotAndroidPluginTemplate"
+rootProject.name = "godot-in-app-update-android"
 include(":plugin")
